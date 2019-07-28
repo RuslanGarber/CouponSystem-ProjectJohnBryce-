@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sliding Page</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/Company.css">
+  
+  
+</head>
+
+<body>
+  <!-- button --->
+<div class="button">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+<!-- navbar menu -->
+<div class='menu'>
+  <nav>
+    <ul>
+      <li>
+        <a href='#' data-class='home_is_visible'>Welcome to Company Menu</a>
+      </li>
+      <li>
+        <a href='#' data-class='create_coupon'>Create Coupon</a>
+      </li>
+      <li>
+        <a href='#' data-class='remove_coupon'>Remove Coupon</a>
+      </li>
+      <li>
+        <a href='#' data-class='update_coupon'>Update Coupon</a>
+      </li>
+      <li>
+        <a href='#' data-class='get_coupon'>Get Coupon</a>
+      </li>
+      <li>
+        <a href='#' data-class='get_all_coupons'>Get All Coupons</a>
+      </li>
+      <li>
+        <a href='#' data-class='view_income_by_company'>Incomes from Company</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- content -->
+
+<div class='content home'>
+  <div class="wrapper">
+  
+  <center>
+  <h1>Company Operations</h1>
+  Hello, Dear Company Representative!<br><br>
+  Welcome to Company Menu.<br><br>
+  For your company the following functions are available:<br>
+      - Add Coupon;<br>
+      - Remove Coupon;<br>
+      - Update Coupon;<br>
+      - Get Coupon by ID;<br>
+      - Get All Coupons<br><br>
+      Click on Hamburger Button to Start!!!<br><br>        
+     Have a nice day!!!
+   
+  </center>
+  
+  <pre><p>                                                                                     </p></pre>
+  </div>
+  </div>
+<div class='content createCoupon'>
+  <div class="wrapper">
+  <h1>Create Coupon</h1>
+  <pre><p>                                                                                     </p></pre>
+  <p>
+		Coupon ID: <input type="text" id="idCreate"><br>
+		Coupon Title: <input type="text" id="titleCreate"><br>
+		Coupon Start Day: <input type="date" id="startDateCreate"><br>
+		Coupon End Day: <input type="date" id="endDateCreate"><br>
+		Coupon Amount: <input type="text" id="amountCreate"><br>
+		<label for="couponType">CouponType:</label> 
+            <select id="typeCreate" name="type">
+				    <option value="RESTURANS">RESTURANS</option>
+				    <option value="ELECTRICITY">ELECTRICITY</option>
+				    <option value="FOOD">FOOD</option>
+				    <option value="HEALTH">HEALTH</option>
+				    <option value="SPORTS">SPORTS</option>
+				    <option value="CAMPING">CAMPING</option>
+				    <option value="TRAVELLING">TRAVELLING</option>
+				    <option value="GAMES">GAMES</option>
+			</select>
+		Coupon Message: <input type="text" id="messageCreate"><br>
+		Coupon Price: <input type="text" id="priceCreate"><br>
+		Coupon Image: <input type="text" id="imageCreate"><br>
+		<button onclick="createCoupon()"> Create Coupon</button>
+ </p>
+</div>
+</div>
+
+<div class='content removeCoupon'>
+  <div class="wrapper">
+  <h1>Remove Coupon</h1>
+  <pre><p>                                                                                     </p></pre>
+  <p>
+		CouponID: <input type="text" id="idRemoveCoup"><br>
+		<button onclick="removeCoupon()"> Remove Coupon</button>
+  </p>
+  </div>
+</div>
+
+
+<div class='content updateCoupon'>
+  <div class="wrapper">
+  <h1>Update Coupon</h1>
+  <pre><p>                                                                                     </p></pre>
+  <p>
+		CouponID: <input type="text" id="idUpdate"><br>
+		<h4>Enter information you want to change</h4>
+		CouponStartDay: <input type="date" id="startDateUpdate"><br>
+		CouponEndDay: <input type="date" id="endDateUpdate"><br>
+		CouponAmount: <input type="text" id="amountUpdate"><br>
+		<label for="couponType">CouponType:</label> 
+                    <select type="type" id="typeUpdate">
+				    <option value="RESTURANS">RESTURANS</option>
+				    <option value="ELECTRICITY">ELECTRICITY</option>
+				    <option value="FOOD">FOOD</option>
+				    <option value="HEALTH">HEALTH</option>
+				    <option value="SPORTS">SPORTS</option>
+				    <option value="CAMPING">CAMPING</option>
+				    <option value="TRAVELLING">TRAVELLING</option>
+				    <option value="GAMES">GAMES</option>
+			</select>
+		CouponMessage: <input type="text" id="messageUpdate"><br>
+		CouponPrice: <input type="text" id="priceUpdate"><br>
+		CouponImage: <input type="text" id="imageUpdate"><br>
+		<button onclick="updateCoupon()"> Update Coupon</button>
+	</p>
+</div>
+</div>
+
+
+<div class='content getCoupon'>
+  <div class="wrapper">
+  <h1>Get Coupon</h1>
+  <pre><p>                                                                                     </p></pre>
+  <p>
+		Coupon ID: <input type="text" id="idGetCoup"><br>
+		<button onclick="getCoupon()"> Get Coupon</button>
+</p>
+  </div>
+</div>
+
+
+
+<div class='content getAllCoupon'>
+  <div class="wrapper">
+  <p><h1>Get All Coupon</h1>
+  <pre><p>                                                                                     </p></pre>
+  	<input type="submit" value="Show" onclick="AllCoupons()">
+		<form align="justify">
+		
+	<table name="couponTable" id="couponTbl" border="2">
+		<tr>
+			<th> Id</th>
+			<th> title</th>
+			<th> startDate</th>
+			<th> endDate</th>
+			<th> amount</th>
+			<th> type</th>
+			<th> message</th>
+			<th> price</th>
+			<th> image</th>
+		</tr>
+	</table></form></p>
+  </div>
+</div>
+
+
+<div class='content viewIncomesFromCompany'>
+  <div class="wrapper">
+  <p><h1>Incomes From Company</h1>
+   <pre><p>                                                                                     </p></pre>
+  <input type="submit" value="Show" onclick="viewIncomesFromCompany()">
+		<form align="justify">
+		
+  		<table name="viewIncomesCompTable" id="viewIncomesCompTbl" border="2">
+					<tr>
+						<th>Income Amount</th>
+					    <th>Income Date</th>
+						<th>Income Type</th>
+					</tr>
+				</table></form>
+				</p>
+			  </div>
+</div>
+
+  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script  src="js/Company.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  perspective: 600px;
+  background: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
+  overflow: scroll;
+}
+@media screen and (max-width: 768px) {
+  body {
+    perspective: 300px;
+  }
+}
+
+.full {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: all 0.6s linear;
+  background-image: url(../image/admin.png);
+}
+
+.menu {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.menu:active {
+  background: #eee;
+}
+.menu::before, .menu::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 14px;
+  height: 2px;
+  width: 20px;
+  background: black;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.menu::before {
+  transform: translateY(-3px);
+}
+.menu::after {
+  transform: translateY(3px);
+}
+.menu.crossed::before {
+  transform: rotate(45deg);
+}
+.menu.crossed::after {
+  transform: rotate(135deg);
+}
+
+.page {
+  transform-origin: right center;
+  transform: translateX(0) rotateY(0);
+  z-index: 1;
+  opacity: 1;
+}
+.page.swipe-lft {
+  opacity: 0.5;
+  z-index: 0;
+  transform: translateX(-100%) rotateY(-35deg);
+}
+
+.nav {
+  transform-origin: left center;
+  transform: translateX(100%) rotateY(35deg);
+  z-index: 0;
+  opacity: 0.5;
+}
+.nav.open {
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(0) rotateY(0deg);
+}
+
+.toggle-button {
+	position: fixed;
+}

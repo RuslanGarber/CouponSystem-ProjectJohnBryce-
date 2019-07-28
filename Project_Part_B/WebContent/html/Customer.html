@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Customer_Interface</title>
+<link rel="stylesheet" href="css/Customer.css">	
+</head>
+
+<body>
+<h1 style="color: red;"><center>Customer Operations</center></h1>
+
+<body>
+ <div class="naccs">
+  <div class="grid">
+   <div class="gc gc--1-of-3">
+    <div class="menu">
+     <div class="active"><span class="light"></span><span>List of Customer Operations</span></div>
+     <div><span class="light"></span><span>Get All Coupons</span></div>
+     <div><span class="light"></span><span>Purchase Coupon</span></div>
+     <div><span class="light"></span><span>Get All Purchased Coupons</span></div>
+     <div><span class="light"></span><span>Get All Purchased Coupons By Type</span></div>
+      <div><span class="light"></span><span>Get All Purchased Coupons By Price</span></div>
+    </div>
+   </div>
+   <div class="gc gc--2-of-3">
+    <ul class="nacc">
+     <li class="active">
+      <div>
+       <center>
+      Hello, My Dear Customer!!!<br><br>
+      Welcome to Customer Menu.<br><br>
+      For you the following functions are available:<br>
+      - Get All Coupons;<br>
+      - Purchase Coupon;<br>
+      - Get All Purchased Coupons;<br>
+      - Get All Purchased Coupons By Type;<br>
+      - Get All Purchased Coupons By Price<br><br>
+     Have a nice day!!!
+      </center>
+
+      </div>
+     </li>
+     <li>
+      <div>
+       <p>
+       <h3 style="color: blue;">Get All Coupons</h3>
+<button id="couponbtn" class="button" onClick="AllCoupons()"> Show All Coupons</button>
+<table name="couponTable" id="couponTbl" border="2">
+        <tr>
+            <th> Id</th>
+            <th> title</th>
+            <th> startDate</th>
+            <th> endDate</th>
+            <th> amount</th>
+            <th> type</th>
+            <th> message</th>
+            <th> price</th>
+            <th> image</th>
+        </tr>
+        </table>
+        </p>
+        </div>
+        </li>
+        <li>
+         <div>
+       <p>
+       <h3 style="color: blue;">Purchase Coupon</h3>
+				
+				CouponID: <input type="text" id="idP"><br>
+	   			<button onclick="purchaseCoupon()"> Purchase Coupon</button>
+				
+        </p>
+        </div>
+        </li>
+         <li>
+         <div>
+       <p>
+       <h3 style="color: blue;">Get All Purchased Coupons</h3>				
+<button id="couponbtnP" class="button" onClick="AllCouponsP()"> Show All Coupons</button>
+    <table name="couponTable" id="couponTblP" border="2">
+    <tr>
+            <th> title</th>
+            <th> startDate</th>
+            <th> endDate</th>
+            <th> type</th>
+            <th> message</th>
+            <th> price</th>
+            <th> image</th>
+            </tr>
+    </table>
+        </p>
+        </div>
+        </li>
+         <li>
+         <div>
+       <p>
+       <h3 style="color: blue;">Get All Purchased Coupons By Type</h3>	
+<label for="couponType">CouponType:</label> 
+            <select id="type" name="type">
+                    <option value="RESTURANS">RESTURANS</option>
+                    <option value="ELECTRICITY">ELECTRICITY</option>
+                    <option value="FOOD">FOOD</option>
+                    <option value="HEALTH">HEALTH</option>
+                    <option value="SPORTS">SPORTS</option>
+                    <option value="CAMPING">CAMPING</option>
+                    <option value="TRAVELLING">TRAVELLING</option>
+                    <option value="GAMES">GAMES</option>
+            </select><br>
+    <button id="couponbtnByType" class="submit" onClick="AllCouponsByType()">
+        Show All Coupons</button>
+    <table name="couponTable" id="couponTblByType" border="2">
+        <tr>
+            <th> title</th>
+            <th> startDate</th>
+            <th> endDate</th>
+            <th> type</th>
+            <th> message</th>
+            <th> price</th>
+            <th> image</th>
+        </tr>
+    </table>
+        </p>
+        </div>
+        </li>
+ <li>
+         <div>
+       <p>
+     <h3 style="color: blue;">Get All Purchased Coupons By Price</h3>		
+   Price: <input type="text" name="price" id="price"><br>
+	<button id="couponbtnByPrice" class="button" onClick="AllCouponsByPrice()">
+		Show All Coupons</button>
+	<table name="couponTable" id="couponTblByPrice" border="2">
+		<tr>
+			<th> title</th>
+			<th> startDate</th>
+			<th> endDate</th>
+			<th> type</th>
+			<th> message</th>
+			<th> price</th>
+			<th> image</th>
+		</tr>
+	</table>
+        </p>
+        </div>
+        </li>
+        </ul>
+   </div>
+  </div>
+ </div>
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="js/Customer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<style type="text/css">
+.form {
+line-height: 1.5;
+text-align: center;
+width:980px;
+margin-top: 200px;
+margin-left: auto;
+margin-right: auto;
+}
+body {
+background-image: url(image/login.png);
+}
+</style>
+</head>
+<body>
+
+
+	<div class="form">
+		<h1>Welcome to CouponSystem</h1>
+		<form action="LoginServlet" method="post" id="post"> 
+			<input type="text" id="name" name="user" placeholder="Enter Your Name..."><br>
+			<input type="password" id="pass" name="pwd" placeholder="Enter Your password..."><br>  
+			<select id="type" name="type">
+				<option value="ClientType" disabled selected>Client Type</option>
+				<option value="ADMIN">Admin</option>
+				<option value="COMPANY">Company</option>
+				<option value="CUSTOMER">Customer</option>
+			</select>
+
+			<h3>
+				<button type="submit" class="button">ENTER</button>
+			</h3>
+		</form>
+	</div>
+
+</body>
+</html>

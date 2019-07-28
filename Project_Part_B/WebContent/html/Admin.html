@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Admin_Interface</title>
+	<link rel="stylesheet" href="css/Admin.css">
+    
+</head>
+
+<body>
+
+<span class="toggle-button">
+     <div class="menu-bar menu-bar-top"></div>
+     <div class="menu-bar menu-bar-middle"></div>
+     <div class="menu-bar menu-bar-bottom"></div>
+</span>
+
+<div class="full page">
+  <div class="menu" id="openNav"></div>
+ 
+<h1 style="color: green;"><center>Admin Operations with Company </center></h1>
+
+        <h3 style="color: blue;">Add Company</h3>    
+           Company ID: <input id="companieID" type="text" placeholder="Company ID"><br> 
+           Company Name: <input id="COMP_NAME"  type="text" placeholder="Name"><br>
+           Company Password: <input id="Password" type="password" placeholder="Password"><br> 
+           Company Email: <input id="EMAIL"  type="text" placeholder="Email"><br> 
+		<button onclick="createCompany()"> Create Company</button>
+		         
+        <h3 style="color: blue;">Remove Company</h3>
+			Company ID: <input id="idRemove" type="text" placeholder="Company ID"><br>
+		<button onclick="removeCompany()"> Remove Company</button>
+             
+        <h3 style="color: blue;">Update Company</h3>       
+              Company ID: <input id="id" type="text" placeholder="Company ID"><br> 
+              <h4>Enter new password or email for the company you want to change</h4>
+              Company Password: <input id="password" type="password" placeholder="Password"><br> 
+			  Company Email: <input id="email"  type="text" placeholder="Email"><br>     
+        <button onclick="updateCompany()"> Update Company</button> 
+               
+        <h3 style="color: blue;">Get Company</h3>
+			  CompanyID: <input id="idGet" type="text" placeholder="Company ID"><br>
+        <button onclick="getCompany()"> Get Company</button>        
+                
+        <h3 style="color: blue;">Get All Companies</h3>
+			  <button id="companybtn" class="button" onClick="AllCompanies()" > Show All Companies</button>
+			<table name="companyTable" id="companyTbl" border="2">
+				<tr>
+					<th>Company Id</th>
+					<th>Company Name</th>
+					<th>Company Password</th>
+					<th>Company Email</th>
+				</tr>
+			</table><br>
+			
+			<h3 style="color: red;">View All Incomes</h3>
+				<button id="incomesbtn" class="button" onClick="allIncomes()">
+					Show All Incomes</button>
+				<table name="incomesTbl" id="incomesTbl" border="1">
+					<tr>
+						<th>Income Amount</th>
+					    <th>Income Date</th>
+						<th>Income Type</th>
+						<th>Income Name</th>
+					</tr>
+				</table>
+				<br>
+				
+<h3 style="color: red;">View Income By Company</h3>
+				Company: <input type="text" name="comp" id="comp"><br>
+				<button id="incomesbtn" class="button" onClick="incomesCompany()">
+					Show All Company Incomes</button>
+				<table name="incomesCompTable" id="incomesCompTbl" border="1">
+					<tr>
+						<th>Income Amount</th>
+						<th>Income Date</th>
+						<th>Income Type</th>
+					</tr>
+				</table>
+				<br>
+</div>
+         
+<div class="full nav">
+  <div class="menu crossed" id="closeNav"></div>
+	<h1 style="color: green;"><center> Admin Operations with Customer </center></h1>
+         
+         <h3 style="color: blue;">Add Customer</h3>
+					Customer ID: <input type="text" id="idCust" placeholder="Customer Id"><br>
+					Customer Name: <input type="text" id="name" placeholder="Customer Name"><br>
+					Customer Password: <input type="password" id="passwordCust" placeholder="Customer Password"><br>
+		 <button onclick="createCustomer()"> Create Customer</button>
+
+		 <h3 style="color: blue;">Remove Customer</h3>
+					Customer ID: <input type="text" id="idRemoveCust" placeholder="Customer Id"><br>
+		 <button onclick="removeCustomer()"> Remove Customer</button>			
+                
+         <h3 style="color: blue;">Update Customer</h3>
+					Customer ID: <input type="text" id="idUp" placeholder="Customer Id"><br>
+					<h4>Enter new password for the customer you want to change</h4>
+					Customer Password: <input type="password" id="password1" placeholder="Customer Password"><br>
+		 <button onclick="updateCustomer()"> Update Customer</button>		
+                
+                
+         <h3 style="color: blue;">Get Customer</h3>
+					Customer ID: <input type="text" id="idGetCust" placeholder="Customer Id"><br>
+		 <button onclick="getCustomer()"> Get Customer</button>			
+                
+                
+                <h3 style="color: blue;">Get All Customers</h3>
+				<button id="customerbtn" class="button" onClick="AllCustomers()"> Show All Customers</button>
+			<table name="customerTable" id="customerTbl">
+				<tr>
+					<th>Customer Id</th>
+					<th>Customer Name</th>
+					<th>Customer Password</th>
+				</tr>
+			</table>
+				<br>
+				
+				<h3 style="color: red;">View Income By Customer</h3>
+				Customer: <input type="text" name="CUST_NAME" id="CUST_NAME"><br>
+				<button id="incomesbtn" class="button" onClick="incomesCustomer()">
+					Show All Customer Incomes</button>
+				<table name="incomesCustTable" id="incomesCustTbl" border="1">
+					<tr>
+						<th>Income Amount</th>
+						<th>Income Date</th>
+						<th>Income Type</th>
+					</tr>
+				</table>
+				<br>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script  src="js/Admin.js"></script>
+</body>
+
+</html>

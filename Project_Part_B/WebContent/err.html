@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<video id="movie" width="1280" height="534" autoplay = "autoplay">
+  <source src="movie/YouShallNotPass.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script type="text/javascript">
+
+var vidio = document.getElementById('movie');
+
+vidio.onended = function(e) {
+	window.location.replace("http://localhost:8080/Project_Part_B/")
+}
+
+</script>
+
+</body>
+</html>
